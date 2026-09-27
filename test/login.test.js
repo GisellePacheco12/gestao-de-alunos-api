@@ -9,7 +9,7 @@ describe('Login', () => {  // ← Corrigido sintaxe
         .set('Content-Type', 'application/json')
         .send({
             email: 'admin@escola.com', 
-            password: 'admin123'  // ← password, não senha
+            senha: 'admin123'  // ← password, não senha
         });
 
         expect(loginResposta.status).to.equal(200);
@@ -22,7 +22,7 @@ describe('Login', () => {  // ← Corrigido sintaxe
         .set('Content-Type', 'application/json')
         .send({
             email: 'admin@escola.com', 
-            password: ''  // ← password, não senha
+            senha: ''  // ← password, não senha
         });
 
         expect(loginResposta.status).to.equal(400);
@@ -34,7 +34,7 @@ describe('Login', () => {  // ← Corrigido sintaxe
         .set('Content-Type', 'application/json')
         .send({
             email: 'admin@escola.com', 
-            password: 'admin1234'  // ← password, não senha
+            senha: 'admin1234'  // ← password, não senha
         });
 
         expect(loginResposta.status).to.equal(401);
