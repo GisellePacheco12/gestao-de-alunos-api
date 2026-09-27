@@ -1,20 +1,20 @@
 {
   "admin": {
     "email": "admin@escola.com",
-    "password": "admin123"
+    "senha": "admin123"
   },
   "alunos": [
     {
       "nome": "João Silva",
       "email": "joao.silva@escola.com",
-      "password": "senha123",
+      "senha": "senha123",
       "matricula": "2024001",
       "cpf": "12345678901"
     },
     {
       "nome": "Maria Santos",
       "email": "maria.santos@escola.com",
-      "password": "senha123",
+      "senha": "senha123",
       "matricula": "2024002",
       "cpf": "98765432101"
     }

@@ -17,7 +17,7 @@ describe('Teste de Integração - Admin → Aluno → Entrega', () => {
         .post('/api/auth/login')
         .send({
           email: testData.admin.email,
-          password: testData.admin.password
+          senha: testData.admin.senha
         });
 
       expect(response.status).to.equal(200);
@@ -52,7 +52,7 @@ describe('Teste de Integração - Admin → Aluno → Entrega', () => {
         .post('/api/auth/login')
         .send({
           email: student.email,
-          password: student.password
+          senha: student.senha
         });
 
       expect(response.status).to.equal(200);
