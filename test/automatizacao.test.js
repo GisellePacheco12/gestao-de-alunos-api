@@ -4,7 +4,6 @@ import testData from './data.json' assert { type: 'json' };
 
 describe('Testes Automatizados - Data-Driven Testing', () => {
   
-  // 1. VALIDAR DADOS DO ADMIN
   describe('Validar Dados do Admin', () => {
     it('Admin deve ter email e senha', () => {
       expect(testData.admin).to.have.property('email');
@@ -14,8 +13,7 @@ describe('Testes Automatizados - Data-Driven Testing', () => {
     });
   });
 
-  // 2. VALIDAR DADOS DE ALUNOS (Data-Driven)
-  describe('Validar Alunos - Data-Driven Testing', () => {
+  describe('Validar Alunos', () => {
     testData.alunos.forEach((aluno, index) => {
       it(`Aluno ${index + 1} (${aluno.nome}) deve ter dados válidos`, () => {
         expect(aluno).to.have.property('nome');
@@ -23,7 +21,6 @@ describe('Testes Automatizados - Data-Driven Testing', () => {
         expect(aluno).to.have.property('senha');
         expect(aluno).to.have.property('matricula');
         expect(aluno).to.have.property('cpf');
-
         expect(aluno.nome).to.be.a('string');
         expect(aluno.email).to.be.a('string');
         expect(aluno.senha).to.be.a('string');
@@ -33,8 +30,7 @@ describe('Testes Automatizados - Data-Driven Testing', () => {
     });
   });
 
-  // 3. VALIDAR DADOS DE TRABALHOS (Data-Driven)
-  describe('Validar Trabalhos - Data-Driven Testing', () => {
+  describe('Validar Trabalhos', () => {
     testData.trabalhos.forEach((trabalho, index) => {
       it(`Trabalho ${index + 1} (${trabalho.titulo}) deve ter dados válidos`, () => {
         expect(trabalho).to.have.property('titulo');
@@ -48,13 +44,11 @@ describe('Testes Automatizados - Data-Driven Testing', () => {
     });
   });
 
-  // 4. VALIDAR DADOS DE ENTREGAS (Data-Driven)
-  describe('Validar Entregas - Data-Driven Testing', () => {
+  describe('Validar Entregas', () => {
     testData.entregas.forEach((entrega, index) => {
       it(`Entrega ${index + 1} (${entrega.arquivo}) deve ter dados válidos`, () => {
         expect(entrega).to.have.property('arquivo');
         expect(entrega).to.have.property('observacoes');
-
         expect(entrega.arquivo).to.be.a('string');
         expect(entrega.observacoes).to.be.a('string');
         expect(entrega.arquivo).to.include('.pdf');
@@ -62,7 +56,6 @@ describe('Testes Automatizados - Data-Driven Testing', () => {
     });
   });
 
-  // 5. VALIDAR QUANTIDADE DE DADOS
   describe('Validar Quantidade de Dados', () => {
     it('Deve ter pelo menos 2 alunos', () => {
       expect(testData.alunos.length).to.be.at.least(2);
